@@ -7,4 +7,4 @@
 2. When rest is used, it takes the remaining elements of a list and turns them into a separate list than the first element.
 
 3.a. (first(rest))
-b. 
+b. The second element is (4 5). It's the second list inside of the initial list not including the nested list inside the first list.
