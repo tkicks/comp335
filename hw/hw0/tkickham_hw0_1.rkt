@@ -6,7 +6,11 @@
     [(empty? x) empty]
     [else 
      (cond
+<<<<<<< HEAD
        [(< first first(rest)) (reverse (x))]
+=======
+       [(< first rest[1]) (reverse (x))]
+>>>>>>> 3461f577d1edfbd6a7b75ecdc66681a87a74547f
        ;(cons ((first x) number)
         ;     (insertion-sort (rest x))))
              
