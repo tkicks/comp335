@@ -6,7 +6,7 @@
     [(empty? x) empty]
     [else 
      (cond
-       [(< first first(rest)) (reverse (x))]
+       [(< first rest[1]) (reverse (x))]
        ;(cons ((first x) number)
         ;     (insertion-sort (rest x))))
              
