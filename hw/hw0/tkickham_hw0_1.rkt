@@ -3,16 +3,19 @@
 (define (insertion-sort 
          [x : (listof number)]) : (listof number)
   (cond
+    ;working parts
+    ;good for 5
     [(empty? x) empty]
-    [(< (first x) (first (rest x))) (insertion-sort (rest x))];(cons (first x) (insertion-sort(rest x)))]
-    ;(cons (first x) (insertion-sort(rest x)))]
+    ;good for 4
+    [(empty? (rest x)) x]
+    ;good for 1
+    [(< (first x) (first (rest x))) (cons (first x) (insertion-sort (rest x)))]
+    ;end working parts
     
-    ;good for all tests but sort
-    ;[else (cons (first x) (insertion-sort(rest x)))]
-    ;)
-             
-    [else (cons (first x) (insertion-sort (rest x)))])
-    )
+    
+    [(> (first x) (first (rest x))) (cons (first x) (insertion-sort (reverse (rest x))))]
+    ;[(> (first x) (first (rest x))) (cons (first x) (insertion-sort (reverse (rest x))))]
+    ))
 
 
 ; Tests:
