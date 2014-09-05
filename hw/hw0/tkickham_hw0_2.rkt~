@@ -8,7 +8,7 @@
   (cond
     [(leaf? t) '()]
     [else
-     (cons(t (tree-to-list left) (tree-to-list right)))
+     (cons(t.node.left) (right))
      ]
     )
   )

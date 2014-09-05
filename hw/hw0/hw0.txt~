@@ -9,8 +9,8 @@
 3.a. (first(rest))
 b. The second element is (4 5). It's the second list inside of the initial list not including the nested list inside the first list.
 <<<<<<< HEAD
+=======
 
 4. No there are not.  All s-expressions are ultimately binary, so each set of parentheses will have one arithmetic expression. Since s-expressions use recursion, it will perform equations in such a manner.
 (* (+  (/ 9 3) 2) 1) will do (((9/3)+2)*1)
-=======
->>>>>>> c786bfdc37ae9d625e4c7a76fe13addd97c3014c
+>>>>>>> 3461f577d1edfbd6a7b75ecdc66681a87a74547f
