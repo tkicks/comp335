@@ -12,7 +12,7 @@
     [(< (first x) (first (rest x))) (cons (first x) (insertion-sort (rest x)))]
     ;end working parts
     
-    
+    ;problem with recursion call and consing - error source for 2 and 3
     [(> (first x) (first (rest x))) (cons (first x) (insertion-sort (reverse (rest x))))]
     ;[(> (first x) (first (rest x))) (cons (first x) (insertion-sort (reverse (rest x))))]
     ))
