@@ -3,18 +3,22 @@
 (define (insertion-sort 
          [x : (listof number)]) : (listof number)
   (cond
-    ;working parts
-    ;good for 5
+    ;if the list is empty return empty
     [(empty? x) empty]
-    ;good for 4
-    [(empty? (rest x)) x]
-    ;good for 1
-    [(< (first x) (first (rest x))) (cons (first x) (insertion-sort (rest x)))]
-    ;end working parts
     
-    ;problem with recursion call and consing - error source for 2 and 3
-    [(> (first x) (first (rest x))) (cons (first x) (insertion-sort (reverse (rest x))))]
-    ;[(> (first x) (first (rest x))) (cons (first x) (insertion-sort (reverse (rest x))))]
+    ;if the rest of the list is empty return the current number
+    [(empty? (rest x)) x]
+    
+    ;if the first number is less than the first number in the rest of the list
+    ;leave it at the front of the list and sort the rest
+    [(< (first x) (first (rest x))) (cons (first x) (insertion-sort (rest x)))]
+    
+    ;if the first number is greater than the first number in the rest of the list
+    [(> (first x) (first (rest x)))
+     (cons
+      (first (insertion-sort (rest x)))     ;first number of the rest of the list recursively until it's the lowest value
+      (rest (insertion-sort (reverse x)))   ;the rest of the list reversed and recursively until it is sorted
+      )]
     ))
 
 

@@ -8,7 +8,9 @@
   (cond
     [(leaf? t) '()]
     [else
-     (cons (tree-to-list (node-left t))); (tree-to-list (node-right t)))
-     ]
+     (cons
+      (node-n (tree-to-list (node-left t)))
+      (node-n (tree-to-list (node-right t)))
+      )]
     )
   )
