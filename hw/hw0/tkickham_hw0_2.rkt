@@ -9,8 +9,11 @@
     [(leaf? t) '()]
     [else
      (cons
-      (node-n (tree-to-list (node-left t)))
-      (node-n (tree-to-list (node-right t)))
+      (cons (node-n t) (tree-to-list (node-left t)))
+      (cons (node-n t) (tree-to-list (node-right t)))
       )]
     )
   )
+
+;test function call
+(tree-to-list (node 5 (node 4 (node 3 (leaf) (leaf)) (leaf)) (node 7 (leaf) (node 9 (node 8 (leaf) (leaf)) (leaf)))))
