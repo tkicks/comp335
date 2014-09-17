@@ -40,6 +40,12 @@
     [multC (l r) (* (interp l) (interp r))]
 ))
 
+; eval will parse and interpret ArithC s-expressions
+; doesn't work yet
+(define (eval [input : s-expression]) : number
+  (parse (input))
+  )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Problem 1
 ; just a number
