@@ -43,14 +43,11 @@
 ; eval will parse and interpret ArithC s-expressions
 ; doesn't work yet
 (define (eval [input : s-expression]) : number
-  (interp (parse input))
+  (parse (input))
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Problem 1
-; upper delimiter
-(display "================================================================\n")
-(display "Problem 1\n")
 ; just a number
 (test (parse '9) (numC 9))
 ; no numbers
@@ -62,48 +59,15 @@
 ; add two sums together
 (test (parse '(+ (+ 1 2) (+ 2 3)))
       (plusC (plusC (numC 1) (numC 2)) (plusC (numC 2) (numC 3))))
-; lower delimiter
-(display "================================================================\n")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Problem 2
-; upper delimiter
-(display "================================================================\n")
-(display "Problem 2\n")
 ; multiply two numbers
-(test 
- (parse '(* 1 2)) 
- (multC (numC 1) (numC 2))
- )
+(test (parse '(* 1 2)) (multC (numC 1) (numC 2)))
 ; multiply the product of two equations
-(test 
- (parse '(* (* 3 7) (* 2 9))) 
- (multC 
-  (multC (numC 3) (numC 7)) 
-  (multC (numC 2) (numC 9))
-  ))
+(test (parse '(* (* 3 7) (* 2 9))) (multC (multC (numC 3) (numC 7)) (multC (numC 2) (numC 9))))
 ; multiply two sums together
-(test 
- (parse '(* (+ 12 17) (+ 1 0))) 
- (multC (plusC (numC 12) (numC 17)) 
-        (plusC (numC 1) (numC 0)))
- )
-; lower delimiter
-(display "================================================================\n")
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Problem 3
-; upper delimiter
-(display "================================================================\n")
-(display "Problem 3\n")
-; eval a plus two numbers
-(test (eval '(+ 13 12)) 25)
-; eval a multiply two additions
-(test (eval '(* (+ 13 27) (+ 2 1))) 120)
-; lower delimiter
-(display "================================================================\n")
+(test (parse '(* (+ 12 17) (+ 1 0))) (multC (plusC (numC 12) (numC 17)) (plusC (numC 1) (numC 0))))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
