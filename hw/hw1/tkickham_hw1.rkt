@@ -9,11 +9,6 @@
   [multC (left : ArithC) (right : ArithC)]
   )
 
-; remember the REPL
-; eval has two parts, the parser and the interpreter
-; (print (eval (read))) --> 
-;     (print (interpret (parse (read))))
-
 ; the parser takes in an s-expression 
 ; and returns the internal representation of the program
 ; the parser checks that the s-expression is valid
@@ -41,9 +36,13 @@
 ))
 
 ; eval will parse and interpret ArithC s-expressions
-; doesn't work yet
 (define (eval [input : s-expression]) : number
   (interp (parse input))
+  )
+
+; if0 will check to see if the return value is a zero
+(define (if0 [value : s-expression]) : number
+  (eval value)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -114,7 +113,7 @@
 ; upper delimiter
 (display "================================================================\n")
 (display "Problem 4\n")
-;(if0 (eval '(* 12 0)) (+ 0 1) (12))
+(test (if0 '(+ 12 0) (0) (1)))
 ; lower delimiter
 (display "================================================================\n")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
