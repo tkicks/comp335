@@ -9,11 +9,6 @@
   [multC (left : ArithC) (right : ArithC)]
   )
 
-; remember the REPL
-; eval has two parts, the parser and the interpreter
-; (print (eval (read))) --> 
-;     (print (interpret (parse (read))))
-
 ; the parser takes in an s-expression 
 ; and returns the internal representation of the program
 ; the parser checks that the s-expression is valid
@@ -50,6 +45,11 @@
 ;(define (ifC [testC : ArithC]) : (thenC : ArithC) (elseC : ArithC)
 ;  (eval (testC))
 ;  )
+
+; if0 will check to see if the return value is a zero
+(define (if0 [value : s-expression]) : number
+  (eval value)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Problem 1
@@ -119,8 +119,12 @@
 ; upper delimiter
 (display "================================================================\n")
 (display "Problem 4\n")
+<<<<<<< HEAD
 (display "Attempted if0, commented out because of errors\n")
 ;(if0 (eval '(* 12 0)) (+ 0 1) (12))
+=======
+(test (if0 '(+ 12 0) (0) (1)))
+>>>>>>> 663348aea5a4b6d190c71ac0f9cdcbd073fdef8b
 ; lower delimiter
 (display "================================================================\n")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
