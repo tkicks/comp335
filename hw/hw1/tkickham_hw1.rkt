@@ -41,10 +41,15 @@
 ))
 
 ; eval will parse and interpret ArithC s-expressions
-; doesn't work yet
 (define (eval [input : s-expression]) : number
   (interp (parse input))
-  )
+)
+
+; ifC is to check for 0.
+; doesn't work yet
+;(define (ifC [testC : ArithC]) : (thenC : ArithC) (elseC : ArithC)
+;  (eval (testC))
+;  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Problem 1
@@ -114,6 +119,7 @@
 ; upper delimiter
 (display "================================================================\n")
 (display "Problem 4\n")
+(display "Attempted if0, commented out because of errors\n")
 ;(if0 (eval '(* 12 0)) (+ 0 1) (12))
 ; lower delimiter
 (display "================================================================\n")

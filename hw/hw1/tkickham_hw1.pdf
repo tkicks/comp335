@@ -1,6 +1,8 @@
-1.i. False
- ii. False
-iii. False
- iv. False
-  v. False
- vi. False
+1.i. False - number
+ ii. True
+iii. False - symbol
+ iv. True
+  v. False - listof number
+ vi. False - list
+
+2. Sugaring would help with comparisons to see if two arithmetic equations are equal.  For example, 2+2 is the same as 2*2, however they are written differently.  Sugaring would subtract the product from the sum and receive 0, making it equal.  Also, for division, it could catch a division by 0.
