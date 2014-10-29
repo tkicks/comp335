@@ -1,0 +1,11 @@
+﻿Tyler Kickham
+
+Writing
+1. The big O of getfundef is n because in the worst case scenario, it has to check each element passed to it.
+
+2. It uses eager because it does the binding before it passes the reference, not when it is needed. Therefore, even if it is not used, it's computed, making it eager instead of lazy.
+
+3.a. ExprC will need a piC type that has the value of pi.  Then when the program is reading in the types and looking them up, it will need to check if the id is pi, meaning that there has to be a piC in the conditional that checks the ids called from the lookup function.
+b. They will all be pi + 5, so they're all 8.1316 and none are different.
+c. print(mypi(5)) = 10 because pi is overwritten in the mypi scope with the value passed in, 5.
+    print(pi) = 3.1416 because the scope does not extend past the function mypi since the function call made before is not returning to the variable pi which would overwrite it.
