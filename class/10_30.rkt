@@ -46,5 +46,3 @@
 (display "\n2.a. =========================================\n")
 (define (greater-than [x : number] [y : listof number]) : listof number
   (> x y))
-  
-
