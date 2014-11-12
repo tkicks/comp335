@@ -1,0 +1,8 @@
+#lang plai-typed
+
+(define (makeinc [n :number]) : (number->number)
+  (+ n))
+
+(define inc4 (makeinc 4))
+
+(test (inc4 6) 10)
