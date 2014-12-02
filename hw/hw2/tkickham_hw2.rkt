@@ -3,13 +3,13 @@
 ; The internal semantic representation for the arithmetic
 ; expressions language
 ; (the C stands for "core" language)
-(define-type ExprC
-  [numC (num : number)]
-  [plusC (left : ExprC) (right : ExprC)]
-  [multC (left : ExprC) (right : ExprC)]
-  [idC (name : symbol)]
-  [appC (function : symbol) (arg : ExprC)]
-  )
+(define-type ArithC
+ [numC (n : number)]
+ [idC (id : symbol)]
+ [plusC (left : ArithC) (right : ArithC)]
+ [beginC (l : (listof ArithC))]
+ [declareC (id : symbol) (val : ArithC)]
+ [setC (id : symbol) (val : ArithC)])
 
 ; the internal representation of a function definition
 ; for now, function definitions have a name, one argument, and a body
